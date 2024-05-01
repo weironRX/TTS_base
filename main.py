@@ -29,9 +29,9 @@ async def text_to_voice(text: str, voice_id: str = "male_1") -> bytes:
 async def main():
     base_text: str = 'This is the best experience I have ever had'
 
-    audio_message: bytes = await text_to_voice(base_text)
+    audio_bytes: bytes = await text_to_voice(base_text)
 
-    audiodata, samplerate = sf.read(io.BytesIO(audio_message))
+    audiodata, samplerate = sf.read(io.BytesIO(audio_bytes))
 
     sf.write("output.wav", audiodata, samplerate)
 
