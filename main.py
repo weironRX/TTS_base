@@ -27,7 +27,7 @@ async def text_to_voice(text: str, voice_id: str = "male_1") -> bytes:
         return response.read()
 
 async def main():
-    base_text: str = 'Hello World!'
+    base_text: str = 'This is the best experience I have ever had'
 
     audio_message: bytes = await text_to_voice(base_text)
 
